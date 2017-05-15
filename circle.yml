@@ -20,21 +20,13 @@ dependencies:
         - echo y | android update sdk --no-ui --all --filter "
               tools,android-25,build-tools-25.0.2,platform-tools,extra-android-m2repository,
               extra-android-support,extra-google-m2repository,extra-google-google_play_services"
-#        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,android-25
-#        - echo y | android update sdk --no-ui --all --filter build-tools-25.0.2
-#        - echo y | android update sdk --no-ui --all --filter android-25
-#        - echo y | android update sdk --no-ui --all --filter tools
-#        - echo y | android update sdk --no-ui --all --filter extra-android-m2repository
-#        - echo y | android update sdk --no-ui --all --filter extra-android-support
-#        - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
-#        - echo y | android update sdk --no-ui --all --filter extra-google-m2repository
 
         - echo y | $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
 
 
 test:
    override:
-     - ./gradlew clean assembleDebug lintDebug
+     - ./gradlew test
 
      # copy lint outputs to artifacts
      - cp -r app/build/reports/lint-* $CIRCLE_ARTIFACTS
