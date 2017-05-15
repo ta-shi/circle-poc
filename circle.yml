@@ -14,6 +14,8 @@ dependencies:
     cache_directories:
         - ~/.gradle
         - ~/.android
+        - /usr/local/android-sdk-linux/tools
+        - /usr/local/android-sdk-linux/build-tools/25.0.2
     pre:
         - echo y | android update sdk --no-ui --all --filter "
               tools,android-25,build-tools-25.0.2,platform-tools,extra-android-m2repository,
