@@ -14,8 +14,10 @@ RUN mkdir -p ${ANDROID_HOME} && cd ${ANDROID_HOME} && \
 ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
 
-RUN echo "y" | android update sdk --no-ui --all --filter " \
-              tools,android-25,build-tools-25.0.3,platform-tools, \
-              extra-android-support,extra-google-m2repository,extra-google-google_play_services"
-
+RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager "tools"
+RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager "extras;google;m2repository"
+RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository"
+#RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager "extra;google;gms;google_play_services"
+RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-25"
+RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;25.0.3"
 RUN echo y | $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
