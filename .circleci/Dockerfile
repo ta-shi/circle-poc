@@ -2,7 +2,8 @@ FROM openjdk:8-jdk-alpine
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache bash git openssh
+    apk add --no-cache bash git openssh && \
+    apk add --no-cache libstdc++
 
 ENV ANDROID_SDK_URL http://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
 ENV ANDROID_HOME /opt/android-sdk
