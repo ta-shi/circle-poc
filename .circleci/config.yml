@@ -11,4 +11,4 @@ jobs:
           command: ./gradlew dependencies
       - run:
           name: Build
-          command: ./gradlew build
+          command: ./gradlew assembleDebug
