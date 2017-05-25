@@ -12,3 +12,8 @@ jobs:
       - run:
           name: Build
           command: ./gradlew assembleDebug
+
+  deployment:
+      hockey:
+          commands:
+            - ipa distribute:hockeyapp -m "test build" --token 7784ea63ac66466bb86de0b303dab0c9
