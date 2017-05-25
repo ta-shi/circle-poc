@@ -4,8 +4,6 @@ jobs:
     working_directory: ~/working_directory
     docker:
       - image: urbansitter/android-java8:latest
-    environment:
-      ANDROID_HOME: /opt/android
     steps:
       - checkout
       - run:
